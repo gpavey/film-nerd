@@ -1,6 +1,11 @@
 /* Space out content a bit */
-body {
-}
+html, body, #map_canvas {
+            /*height: 100%;
+            width: 100%;
+            margin: 0px;*/
+        }
 /*AIzaSyBTAT_GlI8mFh6UnBeEN4CRWqTTdAjfIsg*/
+
+.angular-google-map-container { height: 600px; }
 footer a,
 footer a:hover {color:white;}

@@ -11,7 +11,8 @@
 angular
   .module('filmNerdApp', [
     'ngRoute',
-    'ngTouch'
+    'ngTouch',
+    'uiGmapgoogle-maps',
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -26,4 +27,6 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+
+  ;
