@@ -8,11 +8,15 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/basscss/basscss.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/basscss.css" />
+
+    <script src="//maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places&sensor=false&language=en&v=3.17">
+    </script>
+
     <!-- endbuild -->
   </head>
   <body ng-app="filmNerdApp">
@@ -21,21 +25,27 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">filmNerd</h3>
-      </div>
+    <div>
+      <header class="bg-blue">
+        <div class="relative clearfix container white bg-blue">
+          <div class="left">
+            <a ng-href="#/" class="button py2 m0 button-nav-dark">Film Nerd</a>
+            <a ng-href="#/about" class="button py2 button-nav-dark">About</a>
+            <a ng-href="#!" class="button py2 button-nav-dark">Help</a>
+          </div>
+          <div class="right">
+
+          </div>
+        </div>
+      </header>
 
       <div ng-view=""></div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+      <footer class="bg-mid-gray">
+        <div class="relative clearfix container white">
+          <p class="right">copywrite 2015 | <a href="http://geoffpavey.com" target="_blank">Geoff Pavey</p>
+        </div>
+      </footer>
     </div>
 
 
@@ -62,6 +72,9 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/angular-ui-utils/event.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
