@@ -12,7 +12,7 @@ angular
   .module('filmNerdApp', [
     'ngRoute',
     'ngTouch',
-    'uiGmapgoogle-maps',
+    'uiGmapgoogle-maps'
   ])
   .config(function ($routeProvider) {
     $routeProvider
