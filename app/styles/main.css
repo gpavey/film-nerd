@@ -4,8 +4,6 @@ html, body {
             width: 100%;
             margin: 0px;
         }
-/*AIzaSyBTAT_GlI8mFh6UnBeEN4CRWqTTdAjfIsg*/
-/*#map_canvas {max-width: 100%;}*/
 div[ng-controller="MapCtrl"], #map {
     min-height: 600px;
   height: 100%;
@@ -14,23 +12,42 @@ div[ng-controller="MapCtrl"], #map {
   transform: translateZ(0px);
   background-color: #E5E3DF;
 }
-/*.angular-google-map-container {
 
-  min-height: 600px;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  transform: translateZ(0px);
-  background-color: #E5E3DF;
-}*/
-.angular-google-map-container {
+/*#map-canvas {
   height: calc(100% - 50px);
   width: 100%;
   position: absolute;
   overflow: hidden;
   transform: translateZ(0px);
   background-color: #E5E3DF;
+}*/
+#map_canvas {
+    position: relative;
+    height: calc(100% - 50px);
+    width: 100%;
+    margin: 0px;
 }
+
+.angular-google-map-container {
+/*    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;*/
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  transform: translateZ(0px);
+  background-color: #E5E3DF;
+}
+
+.infoWindowContent {
+    font-size:  14px !important;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
 .middle {
   display: table;
   width: 100%;

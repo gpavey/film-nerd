@@ -1,9 +1,12 @@
-<div class="angular-google-map-container">
-  <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-    <!-- <ui-gmap-marker coords='marker.coords' idKey='marker.id'></ui-gmap-marker> -->
 
-      <ui-gmap-markers models='allMarkers' coords="'self'" doCluster="true"></ui-gmap-markers>
-    </div>
-  </ui-gmap-google-map>
+  <input type="search" placeholder="search" ng-model="query">
+
+                <div ng-repeat="(key, marker) in filteredMarkers = (contents | filter:query) track by key" >
+                </div>
+  <div id="map_canvas">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
+      <ui-gmap-markers models="filteredMarkers" coords="'self'"  icon="'icon'" doCluster="true" ></ui-gmap-markers>
+    </ui-gmap-google-map>
 </div>
+
 
