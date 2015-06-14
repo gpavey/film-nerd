@@ -12,13 +12,13 @@ angular
   .module('filmNerdApp', [
     'ngRoute',
     'ngTouch',
-    'uiGmapgoogle-maps'
+    'leaflet-directive'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MarkersController'
       })
       // .when('/about', {
       //   templateUrl: 'views/about.html',
