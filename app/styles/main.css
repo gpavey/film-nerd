@@ -1,47 +1,23 @@
 /* Space out content a bit */
 html, body {
-            height: 100%;
-            width: 100%;
-            margin: 0px;
-        }
-div[ng-controller="MapCtrl"], #map {
-    min-height: 600px;
   height: 100%;
-  position: relative;
-  overflow: hidden;
-  transform: translateZ(0px);
-  background-color: #E5E3DF;
+  width: 100%;
+  margin: 0px;
 }
 
-/*#map-canvas {
-  height: calc(100% - 50px);
-  width: 100%;
-  position: absolute;
-  overflow: hidden;
-  transform: translateZ(0px);
-  background-color: #E5E3DF;
-}*/
-#map_canvas {
-    position: relative;
-    height: calc(100% - 50px);
+.angular-leaflet-map {
     width: 100%;
-    margin: 0px;
+    height: 320px;
 }
-
-.angular-google-map-container {
-/*    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;*/
-  height: 600px;
-  width: 100%;
-  position: absolute;
-  overflow: hidden;
-  transform: translateZ(0px);
-  background-color: #E5E3DF;
+.left {
+    float: left;
+    width: 58%;
+    padding-right: 1em;
 }
-
+.right {
+    float: right;
+    width: 40%;
+}
 .infoWindowContent {
     font-size:  14px !important;
     border-top: 1px solid #ccc;

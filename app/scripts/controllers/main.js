@@ -11,16 +11,25 @@
  angular.module('filmNerdApp')
 
  .controller('MarkersController', [ '$scope', '$http', function($scope, $http) {
+    var addressPointsToMarkers = function(points) {
+      return points.map(function(ap) {
+        return {
+          lat: ap[4],
+          lng: ap[5]
+        };
+      });
+    };
 
   var createContent = function (contents){
     var stuff = contents;
     var markers = {};
-    var markerContent = [];
     var i = 0;
+    var id;
     angular.forEach(stuff, function(value, key) {
       markers[i++]={
         lat: value.lat,
         lng:  value.lng,
+        layer: 'realworld',
         message:  '<div id="content">'+
                   '<div id="siteNotice">'+
                   '</div>'+
@@ -37,10 +46,9 @@
                   '</p>'+
                   '</div>'+
                   '</div>'
-      };
+      }
     });
-    console.log(markers);
-    $scope.markers = markers;
+  $scope.markers = markers;
   };
 
     angular.extend($scope, {
@@ -52,11 +60,40 @@
       defaults: {
         scrollWheelZoom: false
       },
+      events: {
+        map: {
+          enable: ['moveend', 'popupopen'],
+          logic: 'emit'
+        },
+        marker: {
+          enable: [],
+          logic: 'emit'
+        }
+      },
+      layers: {
+        baselayers: {
+          osm: {
+            name: 'OpenStreetMap',
+            type: 'xyz',
+            url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          }
+        },
+        overlays: {
+          realworld: {
+            name: "Real world data",
+            type: "markercluster",
+            visible: true
+          }
+        }
+      },
       data: {markers: {}}
     });
 
   $http.get("/data/data.json").success(function(data) {
     createContent(data);
+    // $scope.markers = addressPointsToMarkers(data);
+    // console.log($scope.markers);
   });
 
 }]);
+
